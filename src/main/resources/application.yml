@@ -29,7 +29,7 @@ app:
 logging:
   level:
     # DEBUG also shows every rejected row and which trading day a summary request used.
-    com.solactive.stocktracker: ${LOG_LEVEL:DEBUG}
+    com.solactive.stocktracker: ${LOG_LEVEL:INFO}
 
 management:
   endpoints:
