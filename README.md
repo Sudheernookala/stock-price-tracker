@@ -10,7 +10,9 @@ Requires **JDK 21** and **Docker**. Gradle is downloaded by the wrapper (`./grad
 ```bash
 docker compose up -d                       # 1. start PostgreSQL
 ./gradlew bootRun                          # 2. start the app (Flyway creates the tables)
-
+curl -X POST http://localhost:8080/api/v1/folder-scans        # 3. process the files in data/input
+curl http://localhost:8080/api/v1/folder-scans/latest         #    repeat until "status": "COMPLETED"
+curl http://localhost:8080/api/v1/summaries                   # 4. see the result
 ```
 
 ```json
